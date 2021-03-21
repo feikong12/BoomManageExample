@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="BookManageSystem.controller.BookTypeManageFrameController">
+    <VBox alignment="CENTER" prefHeight="700" prefWidth="800">
+        <HBox alignment="CENTER" prefHeight="100" prefWidth="200">
+            <Label text="图书类别维护">
+                <font>
+                    <Font name="System Bold" size="40" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="111" prefWidth="800" spacing="30">
+            <Label text="图书类别名称：" />
+            <TextField fx:id="bookTypeNameTextField" />
+            <Button fx:id="checkButton" mnemonicParsing="false" onAction="#checkButtonEvent" text="查询" />
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="296" prefWidth="600">
+            <TableView fx:id="bookTypeManageTableView" prefHeight="399" prefWidth="605" tableMenuButtonVisible="true">
+                <columns>
+                    <TableColumn fx:id="idTableColumn" prefWidth="100" text="编号" />
+                    <TableColumn fx:id="bookTypeNameTableColumn" prefWidth="200" text="图书类别名称" />
+                    <TableColumn fx:id="bookTypeDescriptionTableColumn" prefWidth="300" text="图书类别描述" />
+                </columns>
+            </TableView>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="263" prefWidth="600">
+            <VBox fx:id="formVBox" prefHeight="240" prefWidth="600">
+                <HBox alignment="CENTER" prefHeight="100" prefWidth="600" spacing="15">
+                    <Label text="编号：" />
+                    <TextField fx:id="bookTypeIdTextField" prefWidth="160" />
+                    <Label text="图书类别名称：" />
+                    <TextField fx:id="bookTypeNameTextField2" prefWidth="200" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100" prefWidth="600" spacing="15">
+                    <Label text="描述：">
+                  <HBox.margin>
+                     <Insets left="37.0" />
+                  </HBox.margin></Label>
+                    <TextArea fx:id="bookTypeDescriptionTextArea" prefHeight="90" prefWidth="475.0" />
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100" prefWidth="400" spacing="150.0">
+                    <Button fx:id="changeButton" mnemonicParsing="false" onAction="#changeButtonEvent" text="修改">
+                  <font>
+                     <Font size="14.0" />
+                  </font></Button>
+                    <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonEvent" text="删除">
+                  <font>
+                     <Font size="14.0" />
+                  </font></Button>
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>
