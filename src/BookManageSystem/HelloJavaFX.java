@@ -6,5 +6,7 @@ package BookManageSystem;
  * @description
  */
 public class HelloJavaFX {
-
+    public static void main(String[] args) {
+        System.out.println("Hello JavaFX");
+    }
 }
